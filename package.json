@@ -1,0 +1,10 @@
+{
+  "name": "cowork-demo-app",
+  "private": true,
+  "type": "module",
+  "description": "WHAT THIS FILE IS FOR: the demo app (repo 2) that the agents edit during the demo. Two scripts matter, because the watcher runs them on every combination of snapshots: `typecheck` and `test`. Dev dependencies (typescript, vitest) are installed by the root `npm run setup`, or here with `npm install -D typescript vitest`.",
+  "scripts": {
+    "typecheck": "tsc --noEmit -p .",
+    "test": "vitest run"
+  }
+}

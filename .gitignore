@@ -1,0 +1,13 @@
+# demo-app/.gitignore (repo 2)
+#
+# WHAT IT'S FOR
+#   Keeps per-laptop files out of the demo app's history. settings.local.json holds each laptop's
+#   hook config with absolute paths (written by hooks/src/install.ts in repo 1), so it must never
+#   be shared. The hooks' own state files live inside .git/, which git never tracks anyway.
+
+node_modules/
+.claude/settings.local.json
+*.log
+.DS_Store
+# vitest's JSON reporter writes here if someone runs it without --outputFile
+.vitest/
