@@ -1,6 +1,6 @@
 # Demo scenario
 
-> **What this file is for:** the exact, repeatable story we show judges, for the orchestrator version of Agent Cowork (repo 1, branch `feat/orchestrator`). It lists the prompts to paste into each agent, the order, what should happen at each step, how to reset, and what to do when something goes wrong live. Rehearse it until it works 5 times out of 5. The spoken lines are in [../pitch/demo-script.md](../pitch/demo-script.md).
+> This file is the exact, repeatable story we show judges, for the orchestrator version of Agent Cowork (repo 1, branch `feat/orchestrator`). It lists the prompts to paste into each agent, the order, what should happen at each step, how to reset, and what to do when something goes wrong live. Rehearse it until it works 5 times out of 5. The spoken lines are in [../pitch/demo-script.md](../pitch/demo-script.md).
 
 **Tested on Oct 24 on a real local SpacetimeDB with real git, tsc and vitest** (`npm run test:live` in repo 1, 29/29): the orchestrator's plan, the review, both agents woken with their tasks, a's message waking b, b pulling a's change and agreeing on a green check, a agreeing, the fact in memory. A real Droid run on the beat-2 request took 52 s and planned exactly beats 2 and 3 (tasks for a and b, reviews by B and D, conflict a x b on the lastLogin unit).
 
