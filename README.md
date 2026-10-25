@@ -11,7 +11,7 @@ A tiny TypeScript app with four modules, one per teammate:
 | Login statistics | `src/analytics/` | C |
 | What the frontend reads | `src/api/` | D |
 
-They all share the `User` type in `src/contracts/user.ts`. Its `lastLogin` field starts out in seconds. The scripted conflict in [SCENARIO.md](SCENARIO.md) changes that unit.
+They all share the `User` type in `src/contracts/user.ts`. Its `lastLogin` field starts out in seconds.
 
 ## Set up a laptop
 

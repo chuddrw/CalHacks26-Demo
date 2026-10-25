@@ -1,6 +1,6 @@
 # Team rules for agents in this repo
 
-> What this file is for: the rules every Claude Code agent follows in demo-app. Four teammates each run an agent here on their own laptop, and a tool called cowork connects them. (Humans: the scripted demo is in SCENARIO.md.)
+> What this file is for: the rules every Claude Code agent follows in demo-app. Four teammates each run an agent here on their own laptop, and a tool called cowork connects them.
 
 ## How the team works
 
