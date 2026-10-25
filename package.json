@@ -1,0 +1,23 @@
+{
+  "name": "simple-shop",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A simple shopping website: product catalog, cart, remove from cart, and a simulated checkout.",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "vite --host 127.0.0.1",
+    "typecheck": "tsc --noEmit -p . && node --check src/checkout/checkout.js && node --check src/checkout/payment.js",
+    "test": "vitest run && node --test test/payment.test.js",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "devDependencies": {
+    "happy-dom": "^21.0.4",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}
