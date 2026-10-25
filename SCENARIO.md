@@ -57,6 +57,7 @@ What should happen:
 3. B's agent wakes on A's message, calls `pull_teammate("a")`, switches `session.ts` and `idle.ts` to milliseconds, runs `check_with_team` (green with a), and calls `agree` with "User.lastLogin is milliseconds since the Unix epoch."
 4. A's agent wakes on B's agreement, runs `check_with_team` ("fails alone but passes together with b"), and agrees too.
 5. The conflict resolves. Memory shows **verified: User.lastLogin is milliseconds since the Unix epoch.** Both agents call `complete_task`; the request shows Done.
+6. The orchestrator rebuilds the full stack (main plus A's and B's work, checked) on `cowork/full-stack` and tells every agent. On any laptop, ask the agent for `get_full_stack` (or run `npm run full-stack -- --demo <clone>` in repo 1) and run `npm test` in `<clone>-full-stack`: the whole project, everyone's work together.
 
 Say out loud: nobody assigned a fixer. The two agents that own the code talked it out, and the tests decided when they were done.
 

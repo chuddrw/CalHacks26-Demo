@@ -27,6 +27,10 @@ A conflict is a thread between you and one teammate's agent. Settle it with them
 
 Tests are the team's shared contract, so keep every existing test as it is. If you believe a test itself is wrong, say so in one line and stop, so a person can decide.
 
+## The team's full stack
+
+The orchestrator keeps the whole project, everyone's work merged and checked, on the branch `cowork/full-stack`. It only updates it when everything passes together, like a main branch that always runs. When your human wants to run the whole project, call `get_full_stack`: it puts that build in a folder next to your clone. Keep working in your own clone; the full-stack folder is for running and demoing.
+
 ## Verified facts
 
 Facts marked "verified" in `[cowork]` notes were agreed by two agents and proven by a passing check. Treat them as true and build on them.
