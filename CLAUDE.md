@@ -4,25 +4,32 @@
 
 ## How the team works
 
-Four agents edit this repo at the same time, each on its own laptop. cowork sees everyone's uncommitted work, merges it onto main, and runs the type check and the tests. Messages that start with `[cowork]` come from that checker and describe real results for the team's combined code.
+Each agent works for one human and owns that human's features. `cowork.owners.json` says who owns which paths; `src/contracts/` is shared by everyone. A human asks for work through their own agent, and the orchestrator assigns each part to the agent that owns it. Messages that start with `[cowork]` come from cowork: tasks, conflict threads with a teammate's agent, their messages, and verified facts.
 
-## Before you change shared code
+## When your human asks for something
 
-Call the `post_intent` tool before you change anything other files import: an exported function, a type, or the meaning or unit of a field. One sentence on what you're changing and why, then make the change.
+If it only touches your own feature, do it. If it changes a shared contract or another owner's feature, call `ask_orchestrator` with your human's request, in their words. You'll get your part back as a task. Leave other owners' files to their agents.
 
-## When a [cowork] conflict names you as the fixer
+## When a [cowork] TASK arrives
 
-Fixing it is your first job:
+1. Work in your own files. Call `post_intent` before you change anything other files import: an exported function, a type, or the meaning or unit of a field.
+2. When you're done, call `check_with_team`. It runs the type check and the tests on your work, alone and together with each teammate's work in progress.
+3. When it's green, call `complete_task` with the task number and one line on what you did.
 
-1. Call the `pull_teammate` tool with the teammate named in the message. It brings their in-progress change into your working tree, so you can run the tests on both changes together.
-2. Keep their changes exactly as pulled, and adapt your own files until `npm test` passes.
-3. The check re-runs after your next edit. You're done when cowork stops reporting the conflict; then continue with your task.
+## When a [cowork] CONFLICT names you
+
+A conflict is a thread between you and one teammate's agent. Settle it with them directly:
+
+1. Tell them what you're changing and what you need from them with `message_teammate`. Each message wakes them.
+2. Change only your own files. To test with their in-progress work, call `pull_teammate` with their name and keep their changes exactly as pulled.
+3. When your side is done, call `check_with_team`, then `agree` with one sentence you both now treat as true. The conflict resolves when you both agree and the check is green, and that sentence becomes a verified fact.
+4. If you can't agree, for example because the change would alter how your human's feature behaves, call `escalate` with both positions. Both humans then decide on the dashboard. Stop working on that conflict until their decision arrives as a `[cowork]` message.
 
 Tests are the team's shared contract, so keep every existing test as it is. If you believe a test itself is wrong, say so in one line and stop, so a person can decide.
 
 ## Verified facts
 
-Facts marked "verified" in `[cowork]` notes were proven by a passing check. Treat them as true and build on them.
+Facts marked "verified" in `[cowork]` notes were agreed by two agents and proven by a passing check. Treat them as true and build on them.
 
 ## Code and tests
 

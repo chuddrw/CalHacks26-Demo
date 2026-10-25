@@ -3,7 +3,7 @@
  *
  * WHAT IT'S FOR
  *   Tests for A's module. When A's agent switches lastLogin to milliseconds, it updates these
- *   expectations as part of its own change. That's a normal edit; the watcher's test guard only
+ *   expectations as part of its own change. That's a normal edit; the test guard only
  *   looks at edits made while fixing a conflict.
  *
  * OWNER: C writes the baseline.

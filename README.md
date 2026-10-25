@@ -20,7 +20,7 @@ They all share the `User` type in `src/contracts/user.ts`. Its `lastLogin` field
 3. In repo 1: `npm run install-hooks -- --demo <path to this clone> --name <you>`.
 4. Open Claude Code in this folder. `/hooks` should list the cowork hooks and `/mcp` should show `cowork`.
 
-The watcher needs its own clone that nobody codes in. Point `DEMO_REPO_PATH` in repo 1's `.env` at it.
+The orchestrator needs its own clone that nobody codes in. Point `DEMO_REPO_PATH` in repo 1's `.env` at it. `cowork.owners.json` says which agent owns which feature; the orchestrator reads it from `main`.
 
 ## Rules for the agents
 

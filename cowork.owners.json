@@ -1,0 +1,10 @@
+{
+  "about": "Who owns which feature in this repo, read by Agent Cowork's orchestrator (repo 1, orchestrator/). Each agent works for one human and owns the paths listed. A change to a shared path, or to another owner's path, is a major change: the humans whose features it affects review it on the dashboard first.",
+  "shared": ["src/contracts/"],
+  "owners": [
+    { "agent": "a", "human": "A", "feature": "Users and logins", "paths": ["src/users/"] },
+    { "agent": "b", "human": "B", "feature": "Session timeout and idle time", "paths": ["src/sessions/"] },
+    { "agent": "c", "human": "C", "feature": "Login statistics", "paths": ["src/analytics/"] },
+    { "agent": "d", "human": "D", "feature": "What the frontend reads", "paths": ["src/api/"] }
+  ]
+}

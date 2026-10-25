@@ -2,8 +2,8 @@
  * demo-app/vitest.config.ts
  *
  * WHAT IT'S FOR
- *   Test settings the watcher relies on: which files are tests (src/**\/*.test.ts) and that they run
- *   in plain Node. The watcher runs `vitest run --reporter=json` with this config in every merged
+ *   Test settings the agents' combined checks rely on: which files are tests (src/**\/*.test.ts) and that they run
+ *   in plain Node. check_with_team runs `vitest run --reporter=json` with this config in every merged
  *   worktree and parses the JSON it prints.
  *
  * OWNER: C.
